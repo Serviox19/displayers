@@ -1,0 +1,18 @@
+{
+  "name": "displayers-challenge",
+  "description": "",
+  "main": "server.js",
+  "license": "ISC",
+  "homepage": "https://github.com/Serviox19/displayers",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

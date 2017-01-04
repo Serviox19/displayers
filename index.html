@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="exhibitors">
   <head>
+    <base href="/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Servio Mora">
@@ -12,15 +13,23 @@
   </head>
   <body>
 
-    <h1>Home Page</h1>
+    <div class="container">
+      <h1>Exhibitors Info</h1><br />
 
+      <nav>
+        <ul>
+          <li><a ui-sref="dashboard">Dash</a></li>
+          <li><a ui-sref="icsc">ICSC</a></li>
+          <li><a ui-sref="ny-now">NY-Now</a></li>
+          <li><a ui-sref="toy-fair">Toy-Fair</a></li>
+        </ul>
+      </nav>
 
-
-    <div class="row">
-      <div class="col s12 col m12">
+      <div>
         <div ui-view></div>
       </div>
-    </div>
 
+
+    <script type="text/javascript" src="./public/angCtrl/app.js"></script>
   </body>
 </html>

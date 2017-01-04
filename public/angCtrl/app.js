@@ -4,21 +4,26 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
+    .state('dashboard', {
+      url: '/',
+      templateUrl: '/views/home.html',
+      controller: ''
+    })
     .state('icsc', {
       url: '/icsc',
-      templateUrl: '/public/views/',
+      templateUrl: '/views/icsc.html',
       controller: ''
     })
     .state('ny-now', {
-      url: '/ny-now',
-      templateUrl: '/public/views/',
+      url: '/ny',
+      templateUrl: '/views/ny-now.html',
       controller: ''
     })
     .state('toy-fair', {
-      url: '/toy-fair',
-      templateUrl: '/public/views/',
+      url: '/toy',
+      templateUrl: '/views/toy-fair.html',
       controller: ''
     })
 
-    $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true);
 });

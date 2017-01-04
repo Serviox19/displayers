@@ -1,7 +1,10 @@
 const express = require('express');
-const router = express.Router();
+const router  = express.Router();
 
 
-router.get('/', function (req, res) {
+router.get('/', function(req, res) {
   res.sendFile(process.cwd() + '/index.html');
 });
+
+
+module.exports = router;

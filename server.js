@@ -1,7 +1,11 @@
+
 const express = require('express');
-const app = express();
-const logger = require('morgan');
-const PORT = process.env.PORT || 3000;
+const app     = express();
+const logger  = require('morgan');
+const PORT    = process.env.PORT || 3000;
+
+// const db;
+// const scraper;
 
 app.use(logger('dev'));
 
@@ -12,11 +16,8 @@ app.use(express.static(__dirname + "/public/views"));
 app.use('/bower_components', express.static(__dirname + "/bower_components"));
 
 
-const routes = require('./routes/index');
-const scraper = require('./routes/scraper');
-
-app.get('/', routes);
-app.get('/scraper', scraper);
+const routes  = require('./routes/index.js');
+app.use('/', routes);
 
 
 app.listen(PORT, function(req, res) {

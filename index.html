@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="exhibitors">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,20 @@
     <title>Exhibitors</title>
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <link rel="stylesheet" href="bower_components/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="">
   </head>
   <body>
 
     <h1>Home Page</h1>
+
+
+
+    <div class="row">
+      <div class="col s12 col m12">
+        <div ui-view></div>
+      </div>
+    </div>
 
   </body>
 </html>

@@ -4,10 +4,20 @@ const logger = require('morgan');
 const PORT = process.env.PORT || 3000;
 
 app.use(logger('dev'));
-//load dir
+
+
+app.use(express.static(__dirname + "/public"));
+app.use('/public', express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public/views"));
+app.use('/bower_components', express.static(__dirname + "/bower_components"));
+
 
 const routes = require('./routes/index');
+const scraper = require('./routes/scraper');
+
 app.get('/', routes);
+app.get('/scraper', scraper);
+
 
 app.listen(PORT, function(req, res) {
   console.log('Listening on PORT: ' + PORT);

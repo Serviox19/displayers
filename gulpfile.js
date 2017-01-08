@@ -3,7 +3,7 @@ var gulp        = require('gulp'),
   sass          = require('gulp-sass'),
   plumber       = require('gulp-plumber'),
   watch         = require('gulp-watch'),
-  minify_css    = require('gulp-minify-css'),
+  minify_css    = require('gulp-minify-css');
 
 
 
@@ -13,7 +13,7 @@ gulp.task('sass', function () {
   .pipe(sass({ style: 'compressed' }))
   .pipe(minify_css())
   .pipe(concat('style.min.css'))
-  .pipe(gulp.dest('./dist/css'))
+  .pipe(gulp.dest('./dist'))
 });
 
 gulp.task('watch', function () {

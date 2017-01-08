@@ -12,6 +12,9 @@ router.get('/nynow', function(req, res, next) {
 
       $ = cheerio.load(body);
 
+      $('').each(function(i, element) {
+        // console.log(element);
+      });
     }
   });
 });
@@ -24,6 +27,9 @@ router.get('/toyfair', function(req, res, next) {
 
       $ = cheerio.load(body);
 
+      $('').each(function(i, element) {
+        // console.log(element);
+      });
     }
   });
 });
@@ -36,6 +42,9 @@ router.get('/icsc', function(req, res, next) {
 
       $ = cheerio.load(body);
 
+      $('').each(function(i, element) {
+        // console.log(element);
+      });
     }
   });
 });

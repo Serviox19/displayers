@@ -12,8 +12,11 @@ router.get('/nynow', function(req, res, next) {
 
       $ = cheerio.load(body);
 
-      $('').each(function(i, element) {
+      $('.table tbody tr').each(function(i, element) {
         // console.log(element);
+        var exName = $(element).children().find('.companyName').text();
+        var boothLabel = $(element).children().find('.boothLabel').text();
+        var infoLink = $(element).children().find('.companyName').find('.exhibitorName').attr('href');
       });
     }
   });

@@ -5,5 +5,5 @@ toyCtrl.controller('toyfair', ['$scope', '$http', function ($scope, $http) {
 
   $http.get('/scrape/toyfair').success(function(data) {
 
-  })
+  });
 }]);

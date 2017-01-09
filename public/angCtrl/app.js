@@ -12,17 +12,17 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('icsc', {
       url: '/icsc',
       templateUrl: '/views/icsc.html',
-      controller: ''
+      controller: 'icsc'
     })
     .state('ny-now', {
       url: '/ny',
       templateUrl: '/views/ny-now.html',
-      controller: ''
+      controller: 'nynow'
     })
     .state('toy-fair', {
       url: '/toy',
       templateUrl: '/views/toy-fair.html',
-      controller: ''
+      controller: 'toyfair'
     })
 
   $locationProvider.html5Mode(true);

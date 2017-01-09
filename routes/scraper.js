@@ -54,13 +54,13 @@ router.get('/toyfair', function(req, res, next) {
 
         function resp(response) {
           console.log("Request handler was called.");
-          response.writeHead(200, {"Content-Type": "application/json"});
+          res.writeHead(200, {"Content-Type": "application/json"});
           var json = JSON.stringify({
             CompanyName: exName,
             BoothLabel: boothLabel,
             Link: infoLink
           });
-          response.send(json);
+          res.send(json);
         };
       });// end element each
     };
@@ -68,15 +68,22 @@ router.get('/toyfair', function(req, res, next) {
 });
 
 router.get('/icsc', function(req, res, next) {
-  var icscUrl = 'http://edm2015.mapyourshow.com/6_0/alphalist.cfm?alpha=*';
+  var icscUrl = 'http://edm2015.mapyourshow.com/6_0/alphalist.cfm?alpha=';
 
   request(icscUrl, function (error, response, body) {
     if (!error && response.statusCode == 200) {
 
       $ = cheerio.load(body);
 
-      $('').each(function(i, element) {
-        // console.log(element);
+      $('#jq-regular-exhibitors tbody tr').each(function(i, element) {
+        var exName   = $(element).children().find('.mys-table-exhname a').text();
+        var booth    = $(element).children().find('.mys-table-booths').find('.mys-floorPlanLink').text();
+        var infoLink = $(element).children().find('.mys-table-booths a').attr('href');
+
+        console.log(exName);
+        console.log(booth);
+        console.log(infoLink);
+        console.log('-----');
       });
     }
   });

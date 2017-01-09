@@ -21,12 +21,6 @@ router.get('/nynow', function(req, res, next) {
         var infoLink = $(element).children().find('.companyName').find('.exhibitorName').attr('href');
 
 
-        res.json({
-          CompanyName: exName,
-          BoothLabel: boothLabel,
-          Link: infoLink
-        });
-
         // console.log(exName);
         // console.log(boothLabel);
         // console.log(infoLink);
@@ -57,18 +51,18 @@ router.get('/toyfair', function(req, res, next) {
         console.log(boothLabel);
         console.log(infoLink);
         console.log('-----');
-      });
 
-      function resp(response) {
-        console.log("Request handler was called.");
-        response.writeHead(200, {"Content-Type": "application/json"});
-        var json = JSON.stringify({
-          CompanyName: exName,
-          BoothLabel: boothLabel,
-          Link: infoLink
-        });
-        response.json(json);
-      };
+        function resp(response) {
+          console.log("Request handler was called.");
+          response.writeHead(200, {"Content-Type": "application/json"});
+          var json = JSON.stringify({
+            CompanyName: exName,
+            BoothLabel: boothLabel,
+            Link: infoLink
+          });
+          response.send(json);
+        };
+      });// end element each
     };
   });
 });
